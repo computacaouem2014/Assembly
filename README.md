@@ -1,14 +1,13 @@
 PIHS
 ===
 
-Listas de exercícios e exercícios feitos em sala de aula de FDA. Recomendável resolvê-las por conta própria e usar as soluções daqui apenas para conferir/comparar respostas.  
-Utils.c é um arquivo com métodos recorrentes em exercícios, por exemplo, printArray e fatorial.
+Listas de exercícios e exercícios feitos em sala de aula de PIHS. Recomendável resolvê-las por conta própria e usar as soluções daqui apenas para conferir/comparar respostas. 
 
 ===
 
 Como usar:
   * Você pode visualizar os arquivos pelo próprio GitHub.
-  * Baixar e editar no Code::Blocks ou qualquer outra IDE.
+  * Baixar e editar em qualquer editor de texto.
   * Se for fazer alguma edição ou novo arquivo que nao seja pelo próprio site, `git pull` antes de começar para não ter problemas com conflitos e merges.
 
 ===
@@ -24,17 +23,7 @@ Links:
 
 ===
 
-Sites com desafios para praticar:
-  * [/r/dailyprogrammer](http://www.reddit.com/r/dailyprogrammer) - a subreddit with daily programming challenges
-  * [UVa Online Judge](http://uva.onlinejudge.org/) - collection hundreds of programming contests problems with online  solution checking system
-  * [Timus](http://acm.timus.ru) - similar to UVA, includes problems from many past competitions (world and regional scale)
-  * [SPOJ](http://spoj.pl) - similar to UVA, with largest choice of programming languages allowed for solutions
-  * [/r/tinycode](http://www.reddit.com/r/tinycode) - a subreddit dedicated to doing big things with little code
-  * [CodingBat](http://codingbat.com/) - coding exercises for Java and Python
-  * [Python Challenge](http://www.pythonchallenge.com/) - combines riddles and programming puzzles to move through different levels
-  * [Project Euler](http://projecteuler.net/) - math-heavy challenges meant to be solved through code
-  * [CodeAbbey](http://codeabbey.com) - set of beginner level problems with solutions being checked by answers (like ProjectEuler) and features of reviewing and commenting other's codes
-  * [codegolf.stackexchange.com](http://codegolf.stackexchange.com/) - site for posting and discussing programming puzzles
-  * [/r/programmingchallenges](http://www.reddit.com/r/programmingchallenges) - a subreddit dedicated to programming challenges, could use reviving
-  * [TopCoder](http://www.topcoder.com/) - online programming competitions, several times each month; solving problems from past contests is allowed for training
-  * [CodeForces](http://codeforces.com) - similar to TopCoder, but more tasks at competitions, and few special features including "virtual contests"
+Instruções para compilar (Máquina linux 32bits):
+ * as -gstabs nomedoarquivo.s -o nomedoarquivo.o
+ * ld nomedoarquivo.o -l c -dynamic-linker /lib/ld-linux.so.2 -o nomedoarquivo (caso use alguma função de biblioteca da linguagem c)
+ * ./nomedoarquivo ou gdb nomedoarquivo
