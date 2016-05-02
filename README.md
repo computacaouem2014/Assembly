@@ -27,3 +27,8 @@ Instruções para compilar (Máquina linux 32bits):
  * as -gstabs nomedoarquivo.s -o nomedoarquivo.o
  * ld nomedoarquivo.o -l c -dynamic-linker /lib/ld-linux.so.2 -o nomedoarquivo (caso use alguma função de biblioteca da linguagem c)
  * ./nomedoarquivo ou gdb nomedoarquivo
+
+===
+
+VIM:
+ :command! WR w! | !clear && as -gstabs % -o %:r.o && ld %:r.o -l c -dynamic-linker /lib/ld-linux.so.2 -o %:r && gdb %:r
