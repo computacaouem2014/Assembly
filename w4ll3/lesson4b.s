@@ -1,0 +1,75 @@
+#declaracao das variaveis
+ 
+.section .data
+abertura:	.asciz "\nPrograma para Somar 3 numeros\n"	
+saida:		.asciz "Soma: %d + %d + %d = %d\n"
+peden1:		.asciz "\nEntre com o valor de n1 = "
+peden2:		.asciz "\nEntre com o valor de n2 = "
+peden3:		.asciz "\nEntre com o valor de n3 = "
+formato:	.asciz "%d" #tipo de dado lido pelo scanf
+
+n1:	.int 0
+n2:	.int 0
+n3:	.int 0
+res:	.int 0
+
+.section .text
+
+.globl	_start
+_start:
+	#printa abertura
+	pushl	$abertura
+	call	printf
+	addl	$4	,	%esp
+
+	#pede n1
+	pushl	$peden1
+	call	printf
+	addl	$4	,	%esp
+
+	#chama scanf para armazenar o valor
+	pushl	$n1
+	pushl	$formato
+	call	scanf
+	addl	$8	,	%esp
+
+	#pede n1
+	pushl	$peden2
+	call	printf
+	addl	$4	,	%esp
+	
+	#chama scanf para armazenar o valor
+	pushl	$n2
+	pushl	$formato
+	call	scanf
+	addl	$8	,	%esp
+
+	#pede n1
+	pushl	$peden3
+	call	printf
+	addl	$4	,	%esp
+
+	#chama scanf para armazenar o valor
+	pushl	$n3
+	pushl	$formato
+	call	scanf
+	addl	$8	,	%esp
+	
+	#move n3 para %eax e realiza a soma neste registrador, depois passa o resultado para res
+	movl	n3	,	%eax
+	addl	n2	,	%eax
+	addl	n1	,	%eax
+	movl	%eax	,	res
+
+	#chama printf com saida final	
+	pushl	res
+	pushl	n3
+	pushl	n2
+	pushl	n1
+	pushl	$saida
+	call	printf
+	addl	$20	,	%esp
+
+	#saida de sistema
+	pushl $0
+	call exit
