@@ -94,14 +94,67 @@ _div64to32:
 	movl	$0, %edx
 	movl	$0x24682467, %eax
 	movl	$2, %ebx
-	divl	%ebx
-	pushl	%edx
+	divl	%ebx		#divides %eax by %ebx and moves the\
+	pushl	%edx		#rest to edx
 	pushl	%eax
 	pushl	$9
 	pushl	$saida2
 	call	printf
 	addl	$16, %esp
 	
+_bigt64to32: #same as _div64to32, but divs biggers than 64bits
+	movl	$0x00002468, %edx
+	movl	$0x00001234, %eax
+	movl	$0x24680, %ebx
+	div	%ebx
+	pushl	%edx
+	pushl	%eax
+	pushl	$10
+	pushl	$saida
+	call	printf
+	addl	$16, %esp
+
+_div32to16:
+	movl	$0, %eax
+	movl	$0, %edx
+	movw	$0x8817, %ax
+	movw	$0x8800, %bx
+	divw	%bx		#divs using 16bits registers
+	pushl	%edx
+	pushl	%eax
+	pushl	$11
+	pushl	$saida
+	call	printf
+	addl	$16, %esp
+
+_bigt32to16:
+	movl	$0, %eax
+	movl	$0x1, %edx
+	movl	$0xFF17, %ax
+	movl	$0xFF00, %bx
+	divw	%bx
+	pushl	%edx
+	pushl	%eax
+	pushl	$12
+	pushl	$saida
+	call 	printf
+	addl	$16, %esp
+
+_div16to8:
+	movl	$0, %eax
+	movl	$0, %edx
+	movw	$0x01F7, %ax
+	movb	$0xF0, %bl
+	divb	%bl
+	movl	%eax, %edx
+	sarw	$8, %dx
+	pushl	%edx
+	andw	$0x00FF, %ax
+	pushl	%eax
+	pushl	$13
+	pushl	$saida2
+	call	printf
+	addl	$12, %esp
 
 pushl	$0
 call	exit
