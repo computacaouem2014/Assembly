@@ -4,9 +4,9 @@
 	saida3:	.asciz	"Teste %d: Resultado = %X:%X\n\n"
 
 .section .text
-.globl _start
+.globl _main
 
-_start:
+_main:
 
 _sumreg32b:
 	movl	$0x12340000, %eax
@@ -101,7 +101,7 @@ _div64to32:
 	pushl	$saida2
 	call	printf
 	addl	$16, %esp
-	
+
 _bigt64to32: #same as _div64to32, but divs biggers than 64bits
 	movl	$0x00002468, %edx
 	movl	$0x00001234, %eax
@@ -158,4 +158,3 @@ _div16to8:
 
 pushl	$0
 call	exit
-

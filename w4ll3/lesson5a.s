@@ -4,8 +4,8 @@
 	saida3:	.asciz	"Teste %d: EAX = %X ; EBX = %X ; ECX = %X ; EDX - %X ; ESI - %X ; EDI = %X\n\n"
 
 .section .text
-.globl	_start
-_start:
+.globl	_main
+_main:
 	movl	$0x12345678	,	%eax
 	pushl	%eax
 	pushl	$1
@@ -35,4 +35,3 @@ _start:
 
 	pushl	$0
 	call	exit
-	

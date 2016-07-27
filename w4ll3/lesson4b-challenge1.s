@@ -1,7 +1,7 @@
 #declaracao das variaveis
- 
+
 .section .data
-abertura:	.asciz "\nPrograma para Somar 3 numeros\n"	
+abertura:	.asciz "\nPrograma para Somar 3 numeros\n"
 saida:		.asciz "Soma: %d + %d + %d = %d\n"
 peden1:		.asciz "\nEntre com o valor de n1 = "
 peden2:		.asciz "\nEntre com o valor de n2 = "
@@ -16,8 +16,8 @@ res:	.int 0
 
 .section .text
 
-.globl	_start
-_start:
+.globl	main
+main:
 	#printa abertura
 	pushl	$abertura
 	call	printf
@@ -45,13 +45,13 @@ _start:
 	pushl	$peden2
 	call	printf
 	addl	$4	,	%esp
-	
+
 	#chama scanf para armazenar o valor
 	pushl	%eax
 	pushl	$formato
 	call	scanf
 	addl	$8	,	%esp
-	
+
 	#aumenta o endereco em mais 1
 	addl	(%eax)	,	%ebx
 	addl	$4	,	%eax
@@ -66,14 +66,14 @@ _start:
 	pushl	$formato
 	call	scanf
 	addl	$8	,	%esp
-	
+
 	#aumenta o endereco
 	addl	(%eax)	,	%ebx
 
 	#armazena o valor da soma em res
 	movl	%ebx	,	res
 
-	#chama printf com saida final	
+	#chama printf com saida final
 	pushl	res
 	pushl	vec
 	pushl	$saida

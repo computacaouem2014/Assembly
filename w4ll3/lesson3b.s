@@ -5,11 +5,12 @@
 .lcomm fabri, 16
 
 .section .text
-.globl _start
-_start:
+.globl _main
+
+_main:
 	movl $0, %eax
 	cpuid
-	
+
 	movl $fabri, %edi
 	movl %ebx, 0(%edi)
 	movl %edx, 4(%edi)

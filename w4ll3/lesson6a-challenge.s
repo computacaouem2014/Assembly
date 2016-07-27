@@ -22,8 +22,8 @@ c:		.int	0
 resp:		.int	0
 
 .section .text
-.globl	_start
-_start:
+.globl	_main
+_main:
 
 volta:
 	pushl	$pede_a
@@ -119,7 +119,7 @@ abc_le_eq:
 	pushl	$le_eq
 	call	printf
 	jmp	fim
-	
+
 abc_le_le:
 	pushl	c
 	pushl	b
@@ -141,7 +141,7 @@ amenorb:
 fim:
 	pushl	$pergunta
 	call	printf
-	
+
 	pushl	$resp
 	pushl	$formato
 	call	scanf
@@ -152,6 +152,6 @@ fim:
 
 	pushl	$tchau
 	call	printf
-	
+
 	pushl	$0
 	call	exit

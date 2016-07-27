@@ -1,7 +1,7 @@
 #declaracao das variaveis
- 
+
 .section .data
-abertura:	.asciz "\nPrograma para Somar 3 numeros\n"	
+abertura:	.asciz "\nPrograma para Somar 3 numeros\n"
 saida:		.asciz "Soma: %d + %d + %d = %d\n"
 peden1:		.asciz "\nEntre com o valor de n1 = "
 peden2:		.asciz "\nEntre com o valor de n2 = "
@@ -15,8 +15,8 @@ res:	.int 0
 
 .section .text
 
-.globl	_start
-_start:
+.globl	_main
+_main:
 	#printa abertura
 	pushl	$abertura
 	call	printf
@@ -37,7 +37,7 @@ _start:
 	pushl	$peden2
 	call	printf
 	addl	$4	,	%esp
-	
+
 	#chama scanf para armazenar o valor
 	pushl	$n2
 	pushl	$formato
@@ -54,14 +54,14 @@ _start:
 	pushl	$formato
 	call	scanf
 	addl	$8	,	%esp
-	
+
 	#move n3 para %eax e realiza a soma neste registrador, depois passa o resultado para res
 	movl	n3	,	%eax
 	addl	n2	,	%eax
 	addl	n1	,	%eax
 	movl	%eax	,	res
 
-	#chama printf com saida final	
+	#chama printf com saida final
 	pushl	res
 	pushl	n3
 	pushl	n2

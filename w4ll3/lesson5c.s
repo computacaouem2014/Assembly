@@ -34,17 +34,17 @@ mostra9:	.asciz	"Teste %d: Girando %d...\n"
 mostra10:	.asciz	"Teste %d: Acabou o loop\n\n"
 
 .section .text
-.globl	_start
-_start:
+.globl	_main
+_main:
 	/*Reading a char*/
 	pushl	$1
 	pushl	$pedido2
 	call	printf
-	
+
 	pushl	$tecla
 	pushl	$formato2
 	call	scanf
-	
+
 	pushl	tecla
 	pushl	$1
 	pushl	$mostra2
@@ -74,7 +74,7 @@ _start:
 	pushl	$frase
 	pushl	$formato3
 	call	scanf
-	
+
 	pushl	$frase
 	pushl	$3
 	pushl	$mostra3
@@ -85,7 +85,7 @@ _start:
 	pushl	$4
 	pushl	$pedido1
 	call	printf
-	
+
 	pushl	$numero
 	pushl	$formato1
 	call	scanf
@@ -94,7 +94,7 @@ _start:
 	pushl	$4
 	pushl	$mostra1
 	call	printf
-	
+
 	pushl	$4
 	pushl	$pedido2
 	call	printf
@@ -137,7 +137,7 @@ _start:
 	pushl	$5
 	pushl	$pedido1
 	call	printf
-	
+
 	pushl	$numero
 	pushl	$formato1
 	call	scanf
@@ -146,7 +146,7 @@ _start:
 	pushl	$5
 	pushl	$mostra1
 	call	printf
-	
+
 	pushl	$5
 	pushl	$pedido2
 	call	printf
@@ -193,7 +193,7 @@ _start:
 	pushl	$n1
 	pushl	$formato1
 	call	scanf
-	
+
 	pushl	$6
 	pushl	$pedido5
 	call	printf

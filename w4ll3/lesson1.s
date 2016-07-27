@@ -2,10 +2,11 @@
 	x: .int 10
 	y: .int 5
 	z: .int -1
-.section .text
-.globl _start
 
-_start:
+.section .text
+.globl _main
+
+_main:
 	movl x, %eax
 
 _passo1:

@@ -12,9 +12,9 @@ r2:	.asciz	"Loop %d. n2 maior que n1\n"
 r3:	.asciz	"Loop %d. n1 igual a n2\n"
 
 .section .text
-.globl _start
+.globl _main
 
-_start:
+_main:
 	pushl	$p1
 	call	printf
 	addl	$4, %esp
@@ -30,7 +30,7 @@ _loopy:
 	push	$p2
 	call	printf
 	addl	$4, %esp
-	
+
 	push	$n1
 	push	$f
 	call	scanf
@@ -39,7 +39,7 @@ _loopy:
 	push	$p3
 	call	printf
 	addl	$4, %esp
-	
+
 	push	$n2
 	push	$f
 	call	scanf
@@ -65,7 +65,7 @@ equals:
 	call	printf
 	addl	$8, %esp
 	jmp	back
-	
+
 n2bign1:
 	push	%ebx
 	push	$r1

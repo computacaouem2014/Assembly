@@ -7,8 +7,8 @@
 	y:	.int	0
 
 .section .text
-.globl _start
-_start:
+.globl _main
+_main:
 	#pega primeiro valor
 	pushl	$x
 	pushl	$f
@@ -30,7 +30,7 @@ _start:
 	#multiplicar por 8
 	movl	x	,	%eax
 	salb	$3	,	%eax
-	
+
 	#mostra resultado de entrada * 8
 	pushl	%eax
 	pushl	$rx
@@ -39,7 +39,7 @@ _start:
 
 	#quebra segundo numero
 	movl	y	,	%ebx
-	
+
 
 	pushl	$0
 	call	exit

@@ -5,9 +5,9 @@ output: .ascii "O fabricante 'xxxxxxxxxxxx' foi identificado\n"
 
 .section .text
 
-.globl _start
+.globl _main
 
-_start:
+_main:
 	movl $0, %eax
 	cpuid
 _ponto1:

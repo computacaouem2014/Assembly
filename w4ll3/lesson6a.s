@@ -9,17 +9,17 @@ a_menor_b:	.asciz	"\nA < B\n"
 a_maior_b:	.asciz	"\nA > B\n"
 formato:	.asciz	"%d"
 pulalin:	.asciz	"\n\n"
-	
-	
-			
-a:		.int	0	
+
+
+
+a:		.int	0
 b:		.int	1
 resp:		.int	0
 
 .section .text
 
-.globl	_start
-_start:
+.globl	_main
+_main:
 
 volta:
 	pushl	$pulalin
@@ -47,7 +47,7 @@ volta:
 
 	movl	b, %ebx
 	cmpl	a, %ebx
-	
+
 	jz	aigualb
 	jg	amenorb
 	pushl	$a_maior_b
@@ -67,11 +67,11 @@ fim:
 	push	$pergunta
 	call	printf
 	pushl	$resp
-	
+
 	pushl	$formato
 	call	scanf
 	movl	resp, %eax
-	
+
 	cmpl	$1, resp
 	jz	volta
 
